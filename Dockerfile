@@ -8,9 +8,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 # Copy only the project file to perform the restore
-COPY ["Groko.Api/Groko.Api.csproj", "Groko.Api/"]
-
-# Restore dependencies for the main project
+COPY Groko.Api/Groko.Api.csproj Groko.Api/
 WORKDIR /src/Groko.Api
 RUN dotnet restore
 
